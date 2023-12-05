@@ -1,0 +1,52 @@
+---
+title: " Flagstaff Weather Analysis"
+author: "Prince Kwame Gyimah"
+date: "30/11/2023"
+output: html_document
+---
+
+This Rmarkdown file will do the analysis.
+
+```{r}
+library(GyimahChapter16)
+library(ggplot2)
+library(lubridate)
+library(tidyverse)
+
+
+```
+
+
+```{r}
+str(Flagstaff_Weather)
+```
+## Time Series Analysis
+
+```{r}
+Flagstaff_Weather.2 <- Flagstaff_Weather %>% mutate(Year =year(DATE), Day =day(DATE), Month =month(DATE))
+
+Flagstaff_Weather.2 %>% group_by(Year) %>%
+  summarise(Year.SNOW =mean(SNOWFALL) , .groups='drop') %>%ggplot(aes(x=Year, y=Year.SNOW)) +geom_line() +labs(x='Yearly', y='SNOW', title = 'Average Snowfall per year')
+
+Flagstaff_Weather.2 %>% group_by(Month) %>%
+  summarise(Month.SNOW =mean(SNOWFALL) , .groups='drop') %>%ggplot(aes(x=Month, y=Month.SNOW)) +geom_line() +labs(x='Monthly', y='SNOW', title = 'Average Snowfall per month ')
+```
+
+
+```{r}
+ggplot(Flagstaff_Weather, aes(x = DATE, y = SNOWFALL)) +
+  geom_line()
+
+ggplot(Flagstaff_Weather, aes(x=DATE, y=PRCP)) +
+  geom_line()
+
+ aa <- Flagstaff_Weather %>% mutate(Year = year(DATE))
+ 
+ aa %>% summarise()
+ 
+ ggplot( aa , aes(x=Year, y=SNOWFALL)) +
+  geom_line()
+```
+
+
+
