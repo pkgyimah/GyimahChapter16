@@ -13,7 +13,7 @@ devtools::install_github('https://github.com/pkgyimah/GyimahChapter16')
 library(GyimahChapter16)
 library(ggplot2)
 library(lubridate)
-library(tidyverse
+library(tidyverse)
 Flagstaff_Weather.2 <- Flagstaff_Weather %>% mutate(Year =year(DATE), Day =day(DATE), Month =month(DATE))
 
 Flagstaff_Weather.2 %>% group_by(Year) %>%
