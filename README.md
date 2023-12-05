@@ -4,7 +4,7 @@ Historical Flagstaff Weather data
 ## To install the R package 
 ```r
 ##install.packages('devtools')
-devtools::install.github('https://github.com/pkgyimah/GyimahChapter16') 
+devtools::install_github('https://github.com/pkgyimah/GyimahChapter16') 
 ```
 
 ## Getting Started
