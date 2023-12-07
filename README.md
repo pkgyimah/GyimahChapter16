@@ -21,3 +21,10 @@ Flagstaff_Weather.2 %>% group_by(Year) %>%
   ggplot(aes(x=Year, y=Year.SNOW)) +geom_line() +
 labs(x='Yearly', y='SNOW', title = 'Average Snowfall per year')
 ```
+
+## Using the FizzBuzz function
+
+```r
+library(GyimahChapter16)
+fizzBuzz(sample(20))
+```
